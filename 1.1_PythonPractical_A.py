@@ -177,8 +177,54 @@ print("Return number of items in dict | len(dict_grades): ", len(dict_grades))
 if "Bob" in dict_grades: # Get True/False on dict items
     print("Found!")
 for key in dict_grades:
-    print(key + ": " + str(dict_grades
-                           [key]))
+    print(key + ": " + str(dict_grades[key]))
 
+print("\nPYTHON BASIC OPERATORS")
+### Using basic operators in python
+print("Addition |  3+16: ", 3+16)
+print("Subtraction | 50-42: ", 50-42)
+print("Multiplication | 5*7: ", 5*7)
+print("Division | 6/2: ", 6/2)
+print("Modulo | 15%4: ", 15%4)
+print("Exponentials | 2**8: ", 2**8)
 
+print("\nPYTHON COMPARISON OPERATORS")
+### Using Relational operators to compare values
+print("Equal to bool | 2==2: ", 2==2)
+print("Equal to bool | 2==3: ", 2==3)
+print("Not Equal to bool | 2!=2: ", 2!=2)
+print("Not Equal to bool | 2!=3: ", 2!=3)
+print("Less than comparison | 2<2: ", 2<2)
+print("Less than comparison | 2<3: ", 2<3)
+print("Inclusive less than comparison | 2<=2: ", 2<=2)
 
+print("\nASSIGNMENT OPERATORS")
+### Various assignment operators on int values
+x = 1
+print("Original 'x' value: ", x)
+x += 1
+print("Incremented 'x' value | x+=1: ", x)
+x *= 3
+print("Mulitplies increment onto 'x' variable| x*=3: ", x)
+x /= 2
+print("Division increment onto 'x' variable | x/=2: ", x)
+x %= 2
+print("Modulo increment onto 'x' variable | x%=2: ", x)
+
+print("\nLOGICAL OPERATORS")
+### Working with logic (True, False, And, Or, Not)
+print("True and True: ", True and True)
+print("True and False: ", True and False)
+print("True or False: ", True or False)
+print("not True: ", not True)
+
+print("\nIDENTITY OPERATORS")
+### Identity operators
+x = 100
+y = 25*4
+print("x(100) is y(25*4): ", x is y)
+
+print("\nMEMBERSHIP OPERATORS")
+### Checking if items are 'in' lists 
+print("3 in [1,2,4,5]: ", 3 in [1,2,4,5])
+print("3 in [3,6,7,8]: ", 3 in [3,6,7,8])
