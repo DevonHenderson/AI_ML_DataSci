@@ -7,9 +7,9 @@ Created on Sat Mar  2 13:14:29 2024
 Python Practical A
 Week 1 - Lecture 1
 """
-
-print("\nBASIC VARIABLES, PRINT, AND TYPES")
+########################################################################
 ### Basic Print Statement
+print("\nBASIC VARIABLES, PRINT, AND TYPES")
 print("Hello World")
 
 ### Indentation
@@ -27,7 +27,7 @@ across multiple
 lines
 """
 
-#Getting user input
+#Getting user input #REMOVED TO SPEED UP CONSOLE RETURN
 #username = input("Please enter a username: ")
 #print("Your username is now: ", username)
 
@@ -51,10 +51,11 @@ print(float(num_int)) # Convert from Float to Int
 print(complex(num_int)) #num_int from Float to Complex
 print(type(num_int))
 
-print("\nMATHEMATICAL FUNCTIONS")
+########################################################################
 ### Using Mathematical functions
 ## Direct copy from lecture notes
 import math
+print("\nMATHEMATICAL FUNCTIONS")
 print("abs(-3):", abs(-3)) # The absolute value of x: the (positive) distance between x and zero.
 print("math.ceil(3.3):", math.ceil(3.3)) #The ceiling of x: the smallest integer not less than x
 print("math.floor(3.3):", math.floor(3.3)) #The floor of x: the largest integer not greater than x
@@ -66,11 +67,11 @@ print("max(3,7,2):", max(3,7,2)) #The largest of its arguments
 print("min(3,7,2):", min(3,7,2)) #The smallest of its arguments
 print("sqrt(25):", math.sqrt(25)) # The square root of x
 
-print("\nRANDOM AND TIME IMPORT FUNCTIONS")
+########################################################################
 ### Random Number Functions
 import random
 import time
-
+print("\nRANDOM AND TIME IMPORT FUNCTIONS")
 """
 seed() sets integer starting value used in generating random numbers. 
 Call before calling any other random module function.
@@ -92,9 +93,9 @@ print("Initial List: ", list)
 random.shuffle(list)
 print("Shuffled List: ", list)
 
-
-print("\nWORKING WITH STRINGS")
+########################################################################
 ### Working with Strings
+print("\nWORKING WITH STRINGS")
 name = "Devon"
 print("Complete String: ", name)
 print("First Char[0] of string: ", name[0])
@@ -106,8 +107,9 @@ print("Bool from string values (a = False): ", "a" in name)
 print("Bool from string values (e = True): ", "e" in name)
 print("Formatted String: ", "My name is %s and I am %d years old!" % (name, 27))
 
-print("\nBUILT-IN STRING METHODS")
+########################################################################
 ### Built-in string methods
+print("\nBUILT-IN STRING METHODS")
 name2 = "bobby"
 print("Capitilise the string: ", name2.capitalize())
 print("Lower to Uppercase: ", name2 + " ", name2.upper())
@@ -117,9 +119,10 @@ print("Find args if occurs and return index (x = False): ", name2.find("x"))
 print("Get length of the string: ", len(name2))
 print("Split string at char/*args: ", name2.split("o"))
 
-print("\nWORKING WITH LIST DATA")
+########################################################################
 ### Working with Lists
 # Items belonging to a list can be of different data types
+print("\nWORKING WITH LIST DATA")
 multi_list = ["abc", 123, 3.14, 'HELLO', 40.4040]
 small_list = [60, "Brian"]
 print("Complete list: ", multi_list)
@@ -132,15 +135,17 @@ print("Concatenated Lists: ", multi_list + small_list)
 multi_list[0] = "Replace" # Replace element in list[pos]
 print("Show altered list: ", multi_list)
 
-print("\nBUILT-IN LIST FUNCTIONS")
+########################################################################
 ### Built-in List functions
+print("\nBUILT-IN LIST FUNCTIONS")
 list1 = [2,4,7,3,8]
 print("List length | len(): ", len(list1))
 print("Return highest value from list | max(): ", max(list1))
 print("Return minimum value from list | min(): ", min(list1))
 
-print("\nBUILT-IN LIST METHODS")
+########################################################################
 ### Built-in List methods
+print("\nBUILT-IN LIST METHODS")
 list_methods  = ["a","e","i","o"]
 print("Index of a list value: | index(\"i\"): ", list_methods.index("i"))
 list_methods.append("u")
@@ -153,8 +158,9 @@ list_methods.remove("e")
 print("Remove specified value from list: ", list_methods)
 print("Count values in list | count(\"a\"): ", list_methods.count("a"))
 
-print("\nSORTING LISTS")
+########################################################################
 ### Sorting lists
+print("\nSORTING LISTS")
 sorting_list = [5,2,9,4,1,0,2]
 print("Original List: ", sorting_list)
 sorting_list.sort()
@@ -162,8 +168,9 @@ print("Sorted list | sort(): ", sorting_list)
 sorting_list.reverse()
 print("Reverse list sorting | reverse(): ", sorting_list)
 
-print("\nDICTIONARIES")
+########################################################################
 ### Dictionaries
+print("\nDICTIONARIES")
 dict_grades = {'Ben': 79, 'Mark': 84, 'Lucas': 92}
 print("dict_grades data: ", dict_grades)
 print("Ben's Grades from dict | dict_grades[\"Ben\"]: ", dict_grades["Ben"])
@@ -179,8 +186,9 @@ if "Bob" in dict_grades: # Get True/False on dict items
 for key in dict_grades:
     print(key + ": " + str(dict_grades[key]))
 
-print("\nPYTHON BASIC OPERATORS")
+########################################################################
 ### Using basic operators in python
+print("\nPYTHON BASIC OPERATORS")
 print("Addition |  3+16: ", 3+16)
 print("Subtraction | 50-42: ", 50-42)
 print("Multiplication | 5*7: ", 5*7)
@@ -188,8 +196,9 @@ print("Division | 6/2: ", 6/2)
 print("Modulo | 15%4: ", 15%4)
 print("Exponentials | 2**8: ", 2**8)
 
-print("\nPYTHON COMPARISON OPERATORS")
+########################################################################
 ### Using Relational operators to compare values
+print("\nPYTHON COMPARISON OPERATORS")
 print("Equal to bool | 2==2: ", 2==2)
 print("Equal to bool | 2==3: ", 2==3)
 print("Not Equal to bool | 2!=2: ", 2!=2)
@@ -198,8 +207,9 @@ print("Less than comparison | 2<2: ", 2<2)
 print("Less than comparison | 2<3: ", 2<3)
 print("Inclusive less than comparison | 2<=2: ", 2<=2)
 
-print("\nASSIGNMENT OPERATORS")
+########################################################################
 ### Various assignment operators on int values
+print("\nASSIGNMENT OPERATORS")
 x = 1
 print("Original 'x' value: ", x)
 x += 1
@@ -211,20 +221,82 @@ print("Division increment onto 'x' variable | x/=2: ", x)
 x %= 2
 print("Modulo increment onto 'x' variable | x%=2: ", x)
 
-print("\nLOGICAL OPERATORS")
+########################################################################
 ### Working with logic (True, False, And, Or, Not)
+print("\nLOGICAL OPERATORS")
 print("True and True: ", True and True)
 print("True and False: ", True and False)
 print("True or False: ", True or False)
 print("not True: ", not True)
 
-print("\nIDENTITY OPERATORS")
+########################################################################
 ### Identity operators
+print("\nIDENTITY OPERATORS")
 x = 100
 y = 25*4
 print("x(100) is y(25*4): ", x is y)
 
-print("\nMEMBERSHIP OPERATORS")
+########################################################################
 ### Checking if items are 'in' lists 
+print("\nMEMBERSHIP OPERATORS")
 print("3 in [1,2,4,5]: ", 3 in [1,2,4,5])
 print("3 in [3,6,7,8]: ", 3 in [3,6,7,8])
+
+########################################################################
+### Conditional Statements
+print("\nCONDITIONAL STATEMENTS")
+positive_num = 2
+print("positive_num: ", positive_num)
+if positive_num <= 5:
+    print("Value of positive_num is less than or equal to 5")
+elif positive_num <= 10:
+    print("Value of positive_num variable is larger than 5 but less or equal than 10")
+else:
+    print("Value of positive_num is larger than 10")
+
+########################################################################
+### Loops - While Loop
+print("\nWHILE LOOP")
+count = 0
+while (count < 5):
+    print("The current count is: ", count)
+    count += 1
+print("End of count check")
+
+########################################################################
+### Loops - For Loop
+print("\nFOR LOOP")
+for letter in "Alphabet":
+    print("Current Letter: ", letter)
+
+print("USING FOR LOOP TO SHOW ALL VALUES IN LIST")    
+fruits = ["Apple", "Mango", "Grape", "Blackcurrant"]
+for fruit in fruits:
+    print('Current fruit: ', fruit)
+    
+print("RANGE OF NUMBERS USING FOR LOOP + STEP VALUES")    
+for i in range(1,100,15):
+    print("The value of i is: ", i)
+
+## Using break to control loop execution termination
+print("USING BREAK IN A FOR LOOP")    
+for letter in "Devon":
+    if letter == "o":
+        break
+    print("Current Letter: ", letter)
+    
+## Using continue to return to beginning of the loop
+print("USING CONTINUE IN A FOR LOOP")    
+for letter in "Devon":
+    if letter == "o":
+        continue
+    print("Current Letter: ", letter)
+    
+## Using pass to give null execution
+print("USING PASS IN A FOR LOOP")    
+for letter in "Devon":
+    if letter == "o":
+        pass # Code could be added in the future
+    print("Current Letter: ", letter)
+    
+########################################################################
