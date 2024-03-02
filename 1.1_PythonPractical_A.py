@@ -116,3 +116,47 @@ print("Find args if occurs and return index (x = False): ", name2.find("x"))
 print("Get length of the string: ", len(name2))
 print("Split string at char/*args: ", name2.split("o"))
 
+print("\n")
+### Working with Lists
+# Items belonging to a list can be of different data types
+multi_list = ["abc", 123, 3.14, 'HELLO', 40.4040]
+small_list = [60, "Brian"]
+print("Complete list: ", multi_list)
+print("First element of list: ", multi_list[0])
+print("Last element of list: ", multi_list[-1])
+print("List elements 1->3: ", multi_list[1:3])
+print("List from 3rd element: ", multi_list[2:])
+print("small_list duplicated (*3): ", small_list*3)
+print("Concatenated Lists: ", multi_list + small_list)
+multi_list[0] = "Replace" # Replace element in list[pos]
+print("Show altered list: ", multi_list)
+
+print("\n")
+### Built-in List functions
+list1 = [2,4,7,3,8]
+print("List length | len(): ", len(list1))
+print("Return highest value from list | max(): ", max(list1))
+print("Return minimum value from list | min(): ", min(list1))
+
+print("\n")
+### Built-in List methods
+list_methods  = ["a","e","i","o"]
+print("Index of a list value: | index(\"i\"): ", list_methods.index("i"))
+list_methods.append("u")
+print("Append value to list | append(\"u\"): ", list_methods)
+list_methods.insert(0, "a")
+print("Insert list value at position | insert(0,\"a\"): ", list_methods)
+list_methods.pop()
+print("Remove last value in list | pop(): ", list_methods)
+list_methods.remove("e")
+print("Remove specified value from list: ", list_methods)
+print("Count values in list | count(\"a\"): ", list_methods.count("a"))
+
+print("\n")
+### Sorting lists
+sorting_list = [5,2,9,4,1,0,2]
+print("Original List: ", sorting_list)
+sorting_list.sort()
+print("Sorted list | sort(): ", sorting_list)
+sorting_list.reverse()
+print("Reverse list sorting | reverse(): ", sorting_list)
