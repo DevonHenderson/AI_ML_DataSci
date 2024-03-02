@@ -8,6 +8,7 @@ Created on Sat Mar  2 13:14:29 2024
 ## Python Practical A
 ## Week 1 - Lecture 1
 
+print("\nBASIC VARIABLES, PRINT, AND TYPES")
 ### Basic Print Statement
 print("Hello World")
 
@@ -50,7 +51,7 @@ print(float(num_int)) # Convert from Float to Int
 print(complex(num_int)) #num_int from Float to Complex
 print(type(num_int))
 
-print("\n")
+print("\nMATHEMATICAL FUNCTIONS")
 ### Using Mathematical functions
 ## Direct copy from lecture notes
 import math
@@ -65,7 +66,7 @@ print("max(3,7,2):", max(3,7,2)) #The largest of its arguments
 print("min(3,7,2):", min(3,7,2)) #The smallest of its arguments
 print("sqrt(25):", math.sqrt(25)) # The square root of x
 
-print("\n")
+print("\nRANDOM AND TIME IMPORT FUNCTIONS")
 ### Random Number Functions
 import random
 import time
@@ -92,7 +93,7 @@ random.shuffle(list)
 print("Shuffled List: ", list)
 
 
-print("\n")
+print("\nWORKING WITH STRINGS")
 ### Working with Strings
 name = "Devon"
 print("Complete String: ", name)
@@ -105,7 +106,7 @@ print("Bool from string values (a = False): ", "a" in name)
 print("Bool from string values (e = True): ", "e" in name)
 print("Formatted String: ", "My name is %s and I am %d years old!" % (name, 27))
 
-print("\n")
+print("\nBUILT-IN STRING METHODS")
 ### Built-in string methods
 name2 = "bobby"
 print("Capitilise the string: ", name2.capitalize())
@@ -116,7 +117,7 @@ print("Find args if occurs and return index (x = False): ", name2.find("x"))
 print("Get length of the string: ", len(name2))
 print("Split string at char/*args: ", name2.split("o"))
 
-print("\n")
+print("\nWORKING WITH LIST DATA")
 ### Working with Lists
 # Items belonging to a list can be of different data types
 multi_list = ["abc", 123, 3.14, 'HELLO', 40.4040]
@@ -131,14 +132,14 @@ print("Concatenated Lists: ", multi_list + small_list)
 multi_list[0] = "Replace" # Replace element in list[pos]
 print("Show altered list: ", multi_list)
 
-print("\n")
+print("\nBUILT-IN LIST FUNCTIONS")
 ### Built-in List functions
 list1 = [2,4,7,3,8]
 print("List length | len(): ", len(list1))
 print("Return highest value from list | max(): ", max(list1))
 print("Return minimum value from list | min(): ", min(list1))
 
-print("\n")
+print("\nBUILT-IN LIST METHODS")
 ### Built-in List methods
 list_methods  = ["a","e","i","o"]
 print("Index of a list value: | index(\"i\"): ", list_methods.index("i"))
@@ -152,7 +153,7 @@ list_methods.remove("e")
 print("Remove specified value from list: ", list_methods)
 print("Count values in list | count(\"a\"): ", list_methods.count("a"))
 
-print("\n")
+print("\nSORTING LISTS")
 ### Sorting lists
 sorting_list = [5,2,9,4,1,0,2]
 print("Original List: ", sorting_list)
@@ -160,3 +161,6 @@ sorting_list.sort()
 print("Sorted list | sort(): ", sorting_list)
 sorting_list.reverse()
 print("Reverse list sorting | reverse(): ", sorting_list)
+
+print("\nDICTIONARIES")
+### Dictionaries
