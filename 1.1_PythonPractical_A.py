@@ -27,8 +27,8 @@ lines
 """
 
 #Getting user input
-username = input("Please enter a username: ")
-print("Your username is now: ", username)
+#username = input("Please enter a username: ")
+#print("Your username is now: ", username)
 
 # Variable Types
 num_int = 1
@@ -50,6 +50,7 @@ print(float(num_int)) # Convert from Float to Int
 print(complex(num_int)) #num_int from Float to Complex
 print(type(num_int))
 
+print("\n")
 ### Using Mathematical functions
 ## Direct copy from lecture notes
 import math
@@ -64,6 +65,7 @@ print("max(3,7,2):", max(3,7,2)) #The largest of its arguments
 print("min(3,7,2):", min(3,7,2)) #The smallest of its arguments
 print("sqrt(25):", math.sqrt(25)) # The square root of x
 
+print("\n")
 ### Random Number Functions
 import random
 import time
@@ -90,12 +92,27 @@ random.shuffle(list)
 print("Shuffled List: ", list)
 
 
+print("\n")
+### Working with Strings
+name = "Devon"
+print("Complete String: ", name)
+print("First Char[0] of string: ", name[0])
+print("Chars[1:3] of string: ", name[1:3])
+print("String starting from char[2:]", name[2:])
+print("Duplicate name: ", name*3)
+print("Concatenated name: ", name + " " + "Henderson")
+print("Bool from string values (a = False): ", "a" in name)
+print("Bool from string values (e = True): ", "e" in name)
+print("Formatted String: ", "My name is %s and I am %d years old!" % (name, 27))
 
-
-
-
-
-
-
-
+print("\n")
+### Built-in string methods
+name2 = "bobby"
+print("Capitilise the string: ", name2.capitalize())
+print("Lower to Uppercase: ", name2 + " ", name2.upper())
+print("Count char/*args in string (b): ", name2.count("b"))
+print("Find args if occurs and return index (o = True): ", name2.find("o"))
+print("Find args if occurs and return index (x = False): ", name2.find("x"))
+print("Get length of the string: ", len(name2))
+print("Split string at char/*args: ", name2.split("o"))
 
