@@ -100,3 +100,7 @@ from IPython.display import (
 from IPython.display import Image
 i = Image(filename='images/ipython_logo.png')
 display(i)
+
+########################################################################
+#END OF FILE
+########################################################################
