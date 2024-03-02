@@ -2,7 +2,7 @@
 """
 Created on Sat Mar  2 13:14:29 2024
 
-@author: devon
+@author: Devon Henderson
 
 Python Practical A
 Week 1 - Lecture 1
@@ -299,4 +299,59 @@ for letter in "Devon":
         pass # Code could be added in the future
     print("Current Letter: ", letter)
     
+########################################################################
+### Functions
+print("\nFUNCTIONS")
+def printStringUpper(string):
+    print("String original: ", string, "\nConverted to upper: ", string.upper())    
+printStringUpper("testing the uppercase")
+
+
+# Pass variable and change within function
+print("SHOW VALUES MODIFIED DURING RUNTIME OF FUNCTION")
+def appendToList(numbers_list):
+    numbers_list.append(1000)
+    print("Values of list inside function: ", numbers_list)
+    return
+numbers_list = [1,10,100]
+print("numbers_list initial values: ", numbers_list)
+appendToList(numbers_list)
+print("Values outside function after called: ", numbers_list)
+
+# Reordering argument names during function calls
+# caller identifies arguments by parameter name, parameter order does not matter
+def printInformation(name, age=35):
+    print("Name:", name)
+    print("Age: ", age)
+    return
+print("TESTING ARGS OUT OF ORDER | age, name ")
+printInformation(age = 27, name = "Devon")
+print("TESTING DEFAULT ARGS VALUES IN FUNCTION | (age = 35)")
+printInformation(name="Devon")
+
+# Returning values
+def sumTwoNumbers(num1, num2):
+    return num1 + num2
+print("To total of 15 + 27.2 is | sumTwoNumbers(15, 27.2): ", sumTwoNumbers(15, 27.2))
+
+# Anonymous Functions
+print("\nUSING ANONYMOUS FUNCTIONS")
+sum = lambda arg1, arg2: arg1 + arg2
+print("sum = lambda arg1, arg2: arg1 + arg2 | sum(30,20): ", sum(30,20))
+
+########################################################################
+## Scope of Variables
+print("\nSCOPE OF VARIABLES")
+total = 0
+def sum(num1, num2):
+    total = num1 + num2
+    print("Total value inside function (local): ", total)
+    return total
+
+returned_total = sum(10,15)
+print("Total value outside function (global): ", total)
+print("Value returned by function: ", returned_total)
+
+########################################################################
+#END OF FILE
 ########################################################################
