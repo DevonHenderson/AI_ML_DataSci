@@ -3,10 +3,10 @@
 Created on Sat Mar  2 13:14:29 2024
 
 @author: devon
-"""
 
-## Python Practical A
-## Week 1 - Lecture 1
+Python Practical A
+Week 1 - Lecture 1
+"""
 
 print("\nBASIC VARIABLES, PRINT, AND TYPES")
 ### Basic Print Statement
@@ -164,3 +164,21 @@ print("Reverse list sorting | reverse(): ", sorting_list)
 
 print("\nDICTIONARIES")
 ### Dictionaries
+dict_grades = {'Ben': 79, 'Mark': 84, 'Lucas': 92}
+print("dict_grades data: ", dict_grades)
+print("Ben's Grades from dict | dict_grades[\"Ben\"]: ", dict_grades["Ben"])
+dict_grades["Lucas"] = 94
+print("Update dict entry | dict_grades[\"Lucas\"]=94: ", dict_grades["Lucas"])
+print("Show all dict keys | dict_grades.keys(): ", dict_grades.keys())
+print("Show all dict values | dict_grades.values(): ", dict_grades.values())
+del dict_grades["Mark"]
+print("Entry removed from dict | del dict_grades[\"Mark\"] : ", dict_grades)
+print("Return number of items in dict | len(dict_grades): ", len(dict_grades))
+if "Bob" in dict_grades: # Get True/False on dict items
+    print("Found!")
+for key in dict_grades:
+    print(key + ": " + str(dict_grades
+                           [key]))
+
+
+
