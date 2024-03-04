@@ -132,6 +132,34 @@ import support #In same filepath called support.py
 support.print_func("Devon")
 support.squared_Func(10)
 
+from support import squared_Func # Can import functions from modules
+squared_Func(5) #Removes need for module prefix to function
+
+from support import * #imports all functions from module (take care with duplicate func names)
+print_func("Testing the import * code")
+
+########################################################################
+### Namespaces and Scoping
+Money = 2000
+
+def AddMoney():
+    global Money
+    Money += 1
+    
+print(Money)
+AddMoney()
+print(Money)
+
+greeting = "Hello"
+def SayHi(name):
+    text = "Hello, " + name + "!"
+    print(locals())
+SayHi("Devon")
+# print(globals())
+print(dir(support))
+
+
+
 ########################################################################
 #END OF FILE
 ########################################################################
