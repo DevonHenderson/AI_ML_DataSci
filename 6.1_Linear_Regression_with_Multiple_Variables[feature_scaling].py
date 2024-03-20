@@ -98,7 +98,6 @@ X_train, X_test, y_train, y_test = tts(X, y, test_size=0.5) #0.5 = 50%
 ########################################################################
 ### Plotting the data
 import pylab as plt
-import matplotlib_inline
 from mpl_toolkits.mplot3d import Axes3D
 
 ## Plot in 3D (View 1)
@@ -134,4 +133,70 @@ print("model.coef_ : ", model.coef_)    #Theta1, Theta2
 print("Model Score: ", model.score(X_test, y_test)) #model explains around 80% 
 
 ### Mean square error
-print("")
+print("\nMean Square errors: ") # value of the cost function at the optimal parameters
+print("Training Set: ", np.mean((model.predict(X_train) - y_train) ** 2))
+print("Test Set: ", np.mean((model.predict(X_test) - y_test) ** 2))
+
+########################################################################
+### Plotting data and linear model
+print("\nPlotting Data and Linear Model..") # plot the training data (marked as red dots) and the hyperplane representing our linear model
+# Plotting the trained data
+fig = plt.figure()
+ax = Axes3D(fig)
+ax = fig.add_subplot(111, projection="3d")
+ax.scatter3D(X_train[:,0], X_train[:,1], y_train[:], c='r') # plots 3d points
+range_x = np.linspace(X_train[:,0].min(), X_train[:,0].max(), num=10)
+range_y = np.linspace(X_train[:,1].min(), X_train[:,1].max(), num=10)
+xx, yy = np.meshgrid(range_x, range_y)
+zz = np.vstack([xx.ravel(), yy.ravel()]).T
+pred = model.predict(zz)
+pred = pred.reshape(10,10)
+plt.xlabel("Voice feature 1")
+plt.ylabel("Voice feature 2")
+ax.set_zlabel("Clinician score of the patient symptoms")
+ax.plot_surface(xx, yy, pred, alpha=.3, color='b') # hyperplane shown as blue agains red training data
+ax.view_init(20,-20)
+plt.show()
+
+# Plotting the test data
+fig = plt.figure()
+ax = Axes3D(fig)
+ax = fig.add_subplot(111, projection="3d")
+ax.scatter3D(X_test[:, 0], X_test[:, 1], y_test[:],c='b')    # plots 3d points 500 is number of points which are visualized
+range_x = np.linspace(X_test[:, 0].min(), X_test[:, 0].max(), num=10)
+range_y = np.linspace(X_test[:, 1].min(), X_test[:, 1].max(), num=10)
+xx, yy = np.meshgrid(range_x, range_y)
+zz = np.vstack([xx.ravel(), yy.ravel()]).T
+pred = model.predict(zz)
+pred = pred.reshape(10, 10)
+plt.xlabel('Voice feature 1')
+plt.ylabel('Voice feature 2')
+ax.set_zlabel('Clinician score of the patient symptoms')
+ax.plot_surface(xx, yy, pred, alpha=.3,color='r')  # plots the plane
+ax.view_init(20,-20)
+plt.show()
+
+new_patient = model.predict([[0.4,0.9]]) # test the performance of your model with a new patient with example values
+print("Model.prediction of example patient data [0.4, 0.9]: ", new_patient)
+
+########################################################################
+### Polynomial regression using nonlinear transformations
+from sklearn.preprocessing import PolynomialFeatures as pf
+X = np.array([0,2,4,6,7])
+y = np.array([1,3,5,3,1])
+plt.scatter(X,y)
+poly = pf(degree=2)
+X_transformed = poly.fit_transform(X.reshape(-1,1))
+print("\nX_transformed: \n", X_transformed)
+model = lm.LinearRegression() #linear model
+model.fit(X_transformed,y)
+
+X_test = np.array([1,3,5,8])  # Different data from initial training data arrays
+X_test_transformed = poly.transform(X_test.reshape(-1,1))
+y_predicted = model.predict(X_test_transformed)
+print("\nX_test_transformed: \n", X_test_transformed)
+print("y_predicted of X_test_transformed: ", y_predicted)
+
+# Add to plot
+plt.scatter(X,y, color='blue')
+plt.scatter(X_test, y_predicted, color='red')
