@@ -9,7 +9,6 @@ Linear Regression with Multiple Variables [Feature Scaling]
 """
 ########################################################################
 ### Feature Scaling  (Standardise data with scikit learn)
-
 from sklearn import preprocessing as pp
 import numpy as np
 
@@ -140,6 +139,7 @@ print("Test Set: ", np.mean((model.predict(X_test) - y_test) ** 2))
 ########################################################################
 ### Plotting data and linear model
 print("\nPlotting Data and Linear Model..") # plot the training data (marked as red dots) and the hyperplane representing our linear model
+
 # Plotting the trained data
 fig = plt.figure()
 ax = Axes3D(fig)
@@ -202,7 +202,7 @@ plt.scatter(X,y, color='blue')
 plt.scatter(X_test, y_predicted, color='red')
 
 ########################################################################
-### 5th degree polynomial to fit curve to data
+### 1st, 3rd and 5th degree polynomial to fit curve to data
 ### Copied directly from Notebook due to length
 import numpy as np
 import matplotlib.pyplot as plt
