@@ -13,6 +13,7 @@ import scipy.io
 import pylab as plt
 
 from sklearn.utils import shuffle as shuf
+from sklearn.linear_model import LogisticRegression as logReg
 
 ########################################################################
 ### Loading data to memory
@@ -62,14 +63,34 @@ ax.grid(False)
 ### Rearranging the data
 print("\nRearranging the data")
 X_new = np.vstack([zeros, ones]) #vstack = stack the data for zeros/ones vertically
-y_new = np.hstack([np.repeat(0, zeros.shape[0]), np.repeat(1, ones.shape[0])])
+y_new = np.hstack([np.repeat(0, zeros.shape[0]), np.repeat(1, ones.shape[0])]) #stack horizontally
 print("X_new.shape: ", X_new.shape)
 print("y_new.shape: ", y_new.shape)
 print("y_new: ", y_new)
 
 #Shuffle the data
 X_new, y_new = shuf(X_new, y_new)
-X_msnist_train = X_new[:5000]
-X_msnist_test = X_new[5000:]
+X_mnist_train = X_new[:5000]
+X_mnist_test = X_new[5000:]
 y_mnist_train = y_new[:5000]
 y_mnist_test = y_new[5000:]
+
+# Learn/Fit a logistic regression model
+logRegModel = logReg(solver='lbfgs')
+logRegModel.fit(X_mnist_train, y_mnist_train)
+print("logRegModel: ", logRegModel)
+
+########################################################################
+### Visualize the coefficients of the fitted model
+print("\nVisualize the coefficients of the fitted model... (new plot)")
+plt.matshow(logRegModel.coef_.reshape(28,28))
+plt.colorbar()
+ax = plt.gca()
+ax.grid(False)
+
+########################################################################
+### Testing model/s accuracy : score
+print("\nTesting model accuracy(score):")
+print("Accuracy training set \t: ", logRegModel.score(X_mnist_train, y_mnist_train))
+print("Accuracy test set \t\t: ", logRegModel.score(X_mnist_test, y_mnist_test)) #how well is logRegModel likely to perform in unseen data (~0.998)
+ 
