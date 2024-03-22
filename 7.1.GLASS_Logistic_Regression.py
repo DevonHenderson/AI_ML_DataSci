@@ -57,7 +57,7 @@ print("y_test\t\t  : ", y_test.shape)
 
 ########################################################################
 ### 6) Create Logisitic Regression model and fit the training data
-logRegModel = LogReg()               # Create
+logRegModel = LogReg()                              # Create
 logRegModel = LogReg(solver='lbfgs', max_iter=1000) # Assign solver and iterations
 logRegModel.fit(X_train, y_train)                   # Fit training data
 print("\nEx 6) Logisitc Regression Model fitted with data: ",logRegModel)
