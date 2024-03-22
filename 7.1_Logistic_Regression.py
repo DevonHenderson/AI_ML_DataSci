@@ -80,3 +80,16 @@ y_pred_test = logRegModel.predict(X_test)
 plt.scatter(X_test[:, 0], X_test[:, 1], c=y_pred_test, marker='^')
 plot_decision_boundary(logRegModel, X)
 print("Accuracy on test set: \t\t", logRegModel.score(X_test, y_test))
+
+########################################################################
+### Exercises
+
+#New data blob - Cluster_STD increased to 8 - data blobs are closer together 
+X, y = mb(n_samples=100, n_features=2, centers=2, cluster_std=8, random_state=1)
+print("X.shape (CSTD=8): ", X.shape)
+print("y (CSTD=8): ", y)
+y_pred_test = logRegModel.predict(X_test)
+plt.scatter(X_test[:, 0], X_test[:, 1], c=y_pred_test, marker='^')
+plot_decision_boundary(logRegModel, X)
+
+
