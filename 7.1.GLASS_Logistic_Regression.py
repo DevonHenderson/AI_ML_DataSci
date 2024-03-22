@@ -51,9 +51,9 @@ print(f"Test  size = {X.shape[0]}*0.25 [25%] : ", X.shape[0]*.25 )
 print("----")
 print("Results of Split: ")
 print("X_train_scaled: ", X_train_scaled.shape)
-print(" X_test_scaled: ", X_test_scaled.shape)
-print("\t   y_train: ", y_train.shape)
-print("\t    y_test: ", y_test.shape)
+print("X_test_scaled : ", X_test_scaled.shape)
+print("y_train\t\t  : ", y_train.shape)
+print("y_test\t\t  : ", y_test.shape)
 
 ########################################################################
 ### 6) Create Logisitic Regression model and fit the training data
